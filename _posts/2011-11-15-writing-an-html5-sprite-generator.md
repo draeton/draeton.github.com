@@ -16,30 +16,30 @@ jQuery 1.6.2+, Modernizr (Dropfile, Flashcanvas for older browser support)
 ##Setup
 
 {% highlight html %}
-    <!-- Stitches -->
-    <link rel="stylesheet" href="src/stitches/stitches.css">
+<!-- Stitches -->
+<link rel="stylesheet" href="src/stitches/stitches.css">
 
-    <script defer src="src/stitches/main.js"></script>
-    <script defer src="src/stitches/page.js"></script>
-    <script defer src="src/stitches/icon.js"></script>
-    <script defer src="src/stitches/icons.js"></script>
+<script defer src="src/stitches/main.js"></script>
+<script defer src="src/stitches/page.js"></script>
+<script defer src="src/stitches/icon.js"></script>
+<script defer src="src/stitches/icons.js"></script>
 {% endhighlight %}
 
 ##Markup
 
 {% highlight html %}
-    <div id="stitches"></div>
+<div id="stitches"></div>
 {% endhighlight %}
 
 ##Implementation
 
 {% highlight javascript %}
-    (function ($, Stitches) {
+(function ($, Stitches) {
 
-        var $stitches = $("#stitches");
-        Stitches.init($stitches);
+    var $stitches = $("#stitches");
+    Stitches.init($stitches);
 
-    }(jQuery, Stitches));
+}(jQuery, Stitches));
 {% endhighlight %}
 
 ##TODO
