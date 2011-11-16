@@ -3,7 +3,7 @@ layout: post
 title: Writing an HTML5 Sprite Generator
 ---
 
-# {{ page.title }} #
+# {{ page.title }}
 
 {% highlight javascript %}
 (function ($) {
@@ -11,6 +11,6 @@ title: Writing an HTML5 Sprite Generator
 }(jQuery));
 {% endhighlight %}
 
-## Usage #
+## Usage
 
 some more stuff and [a link][/to-somewhere]
