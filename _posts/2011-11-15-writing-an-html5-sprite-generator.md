@@ -13,4 +13,4 @@ title: Writing an HTML5 Sprite Generator
 
 ## Usage
 
-some more stuff and [a link][/to-somewhere]
+some more stuff and [a link](/to-somewhere)
