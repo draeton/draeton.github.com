@@ -220,6 +220,7 @@ td { vertical-align: top; }
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
+  padding-left: 0;
 }
 
   ul.posts li {
