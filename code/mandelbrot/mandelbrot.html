@@ -1,0 +1,20 @@
+<html>
+<head><title></title></head>
+<body>
+
+<canvas id="mandelbrot" width="700" height="400"></canvas>
+
+
+<script src="mandelbrot.js"></script>
+<script>
+(function () {
+    var canvas = document.getElementById("mandelbrot");
+    var options = {};
+    var mandy = new Mandelbrot(canvas, options);
+
+    mandy.generate();
+})();
+</script>
+
+</body>
+</html>
