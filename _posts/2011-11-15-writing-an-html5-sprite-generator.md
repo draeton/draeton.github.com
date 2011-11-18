@@ -7,7 +7,7 @@ Lots of writing to do here...
 
 ##Demo
 
-[Here.](http://github.matthewcobbs.com/Stitches/).
+[Here.](http://github.matthewcobbs.com/stitches/).
 
 ## Dependencies
 
