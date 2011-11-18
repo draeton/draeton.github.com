@@ -1,18 +1,23 @@
 <html>
 <head>
 <title>Mandelbrot Generator</title>
+<style type="text/css">
+body {
+    margin: 0;
+    background: black;
+}
+</style>
 </head>
 <body>
 
-<canvas id="mandelbrot" width="700" height="400"></canvas>
+<canvas id="mandelbrot" width="1050" height="600"></canvas>
 
 <script src="mandelbrot.js"></script>
 <script>
 (function () {
     var canvas = document.getElementById("mandelbrot");
     var options = {
-        imax: Math.pow(2, 8),
-        zoom: 1
+        zoom: 0.7
     };
     var cwidth = canvas.width;
     var cheight = canvas.height;

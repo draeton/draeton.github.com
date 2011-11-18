@@ -35,16 +35,7 @@
         K: 2,
 
         // max iterations
-        imax: Math.pow(2, 8),
-
-        // color masks
-        /*jshint bitwise: false */
-        rmask: (Math.pow(2, 24) - 1) ^ (Math.pow(2, 16) - 1),
-        gmask: (Math.pow(2, 16) - 1) ^ (Math.pow(2,  8) - 1),
-        bmask: (Math.pow(2,  8) - 1),
-        /*jshint bitwise: true */
-        cmax : (Math.pow(2, 24) - 1),
-        cscale: null
+        imax: 255
     };
 
     Mandelbrot.prototype = {
@@ -102,17 +93,17 @@
             s.xoffset = s.xmin / s.zoom;
             s.yoffset = s.ymin / s.zoom;
             
-            s.cscale = s.cmax / s.imax;
+            s.cscale = s.maxbits / s.imax;
         },
 
         // draw the fractal on the image data
         _drawPixels: function (pixels) {
-            var s = this.settings, x, y, i, rgb, n = 0;
+            var s = this.settings, imax = s.imax, x, y, i, rgb, n = 0;
 
             for (y = 0; y < this.cheight; y += 1) {
                 for (x = 0; x < this.cwidth; x += 1) {
                     i = this._getIterations(x, y);
-                    rgb = this._getRGB(i);
+                    rgb = this._getHSV(i, imax);
 
                     pixels[n]     = rgb.r;
                     pixels[n + 1] = rgb.g;
@@ -141,18 +132,71 @@
         },
 
         // convert iterations to RGB value
-        _getRGB: function (i) {
-            var s = this.settings, r, g, b;
+        _getRGB: function (i0, imax) {
+            var i, r, g, b;
 
-            i = i * s.cscale;
+            i = (i0 / imax) * 0xFFFFFF;
+
             /*jshint bitwise: false */
-            r = (i & s.rmask) >> 16;
-            g = (i & s.gmask) >> 8;
-            b = (i & s.bmask) >> 0;
+            r = (i & 0xFF0000) >> 16;
+            g = (i & 0x00FF00) >> 8;
+            b = (i & 0x0000FF) >> 0;
             /*jshint bitwise: true */
 
-            return {r: r, g: g, l: b};
+            return {r: r, g: g, b: b};
+        },
+
+        // convert iterations to HSV value
+        _getHSV: function (i0, imax) {
+            var i, h, s, v;
+
+            i = (i0 / imax) * 0xFFFFFF;
+
+            /*jshint bitwise: false */
+            h = ((i & 0xFF0000) >> 16) / 255;
+            s = ((i & 0x00FF00) >> 8) / 255;
+            v = ((i & 0x0000FF) >> 0) / 255;
+            /*jshint bitwise: true */
+
+            return HSLtoRGB(h, s, v);
         }
     };
+
+    // adapted from http://purl.eligrey.com/github/color.js
+    function HSLtoRGB (h, s, l) {
+		var r, g, b,
+
+		hue2rgb = function (p, q, t){
+		    if (t < 0) {
+		    	t += 1;
+		    }
+		    if (t > 1) {
+		    	t -= 1;
+		    }
+		    if (t < 1/6) {
+		    	return p + (q - p) * 6 * t;
+		    }
+		    if (t < 1/2) {
+		    	return q;
+		    }
+		    if (t < 2/3) {
+		    	return p + (q - p) * (2/3 - t) * 6;
+		    }
+		    return p;
+		};
+
+		if (s === 0) {
+			r = g = b = l; // achromatic
+		} else {
+			var
+			q = l < 0.5 ? l * (1 + s) : l + s - l * s,
+			p = 2 * l - q;
+			r = hue2rgb(p, q, h + 1/3);
+			g = hue2rgb(p, q, h);
+			b = hue2rgb(p, q, h - 1/3);
+		}
+
+		return {r: r * 0xFF, g: g * 0xFF, b: b * 0xFF};
+	};
 
 })(window);
