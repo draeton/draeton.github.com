@@ -1,5 +1,5 @@
 /*!
- * Mandelbrot generators
+ * Mandelbrot generator for HTML5 canvas
  * http://draeton.github.com/code/mandelbrot/
  *
  * Copyright 2011, Matthew Cobbs
