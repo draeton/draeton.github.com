@@ -1,12 +1,21 @@
+/*!
+ * Mandelbrot generators
+ * http://draeton.github.com/code/mandelbrot/
+ *
+ * Copyright 2011, Matthew Cobbs
+ * Licensed under the MIT license.
+ */
 (function (window) {
 
-    function Mandelbrot (canvas, options) {
+    "use strict";
+
+    function Mandelbrot (canvas, options, cwidth, cheight) {
         Mandelbrot.prototype.init.apply(this, arguments);
     }
 
     window.Mandelbrot = Mandelbrot;
 
-    Mandelbrot.defaults = {
+    Mandelbrot._defaults = {
         // axis boundaries
         xmin: -2.5,
         xmax: 1,
@@ -14,7 +23,7 @@
         ymax: 1,
 
         // current zoom
-        zoom: 2,
+        zoom: 1,
 
         // scale set to canvas
         xscale : null,
@@ -26,34 +35,36 @@
         K: 2,
 
         // max iterations
-        imax: 100,
+        imax: Math.pow(2, 8),
 
         // color masks
+        /*jshint bitwise: false */
         rmask: (Math.pow(2, 24) - 1) ^ (Math.pow(2, 16) - 1),
         gmask: (Math.pow(2, 16) - 1) ^ (Math.pow(2,  8) - 1),
         bmask: (Math.pow(2,  8) - 1),
+        /*jshint bitwise: true */
         cmax : (Math.pow(2, 24) - 1),
         cscale: null
     };
 
     Mandelbrot.prototype = {
         // settings and calculations
-        init: function (canvas, options) {
+        init: function (canvas, options, cwidth, cheight) {
             this.canvas  = canvas;
             this.cwidth  = canvas.width;
             this.cheight = canvas.height;
             this.context = canvas.getContext('2d');
 
             // extend settings with options
-            this.settings = Object.create(Mandelbrot.defaults);
+            this.settings = Object.create(Mandelbrot._defaults);
 
-            if (options) {
-                this.update(options);
+            if (options || cwidth && cheight) {
+                this._update(options, cwidth, cheight);
             }
         },
 
         // update the settings
-        update: function (options, cwidth, cheight) {
+        _update: function (options, cwidth, cheight) {
             for (var i in options) {
                 if (options.hasOwnProperty(i)) {
                     this.settings[i] = options[i];
@@ -61,13 +72,29 @@
             }
 
             if (cwidth && cheight) {
-                this.canvas.width = cwidth;
-                this.canvas.height = cheight;
+                this.canvas.width = this.cwidth = cwidth;
+                this.canvas.height = this.cheight = cheight;
             }
         },
 
+        // create the fractal
+        generate: function (options, cwidth, cheight) {
+            var imageData, pixels;
+
+            if (options || cwidth && cheight) {
+                this._update(options, cwidth, cheight);
+            }
+
+            imageData = this.context.createImageData(this.cwidth, this.cheight);
+            pixels    = imageData.data;
+
+            this._calc();
+            this._drawPixels(pixels);
+            this.context.putImageData(imageData, 0, 0);
+        },
+
         // calculate dependent variables
-        calc: function () {
+        _calc: function () {
             var s = this.settings;
             
             s.xscale  = (s.xmax - s.xmin) / (this.cwidth * s.zoom);
@@ -78,8 +105,27 @@
             s.cscale = s.cmax / s.imax;
         },
 
+        // draw the fractal on the image data
+        _drawPixels: function (pixels) {
+            var s = this.settings, x, y, i, rgb, n = 0;
+
+            for (y = 0; y < this.cheight; y += 1) {
+                for (x = 0; x < this.cwidth; x += 1) {
+                    i = this._getIterations(x, y);
+                    rgb = this._getRGB(i);
+
+                    pixels[n]     = rgb.r;
+                    pixels[n + 1] = rgb.g;
+                    pixels[n + 2] = rgb.b;
+                    pixels[n + 3] = 255; // alpha
+
+                    n += 4;
+                }
+            }
+        },
+
         // get the number of iterations before determining member of set
-        getIterations: function (x0, y0) {
+        _getIterations: function (x0, y0) {
             var s = this.settings, x  = 0, y = 0, i, xtemp;
 
             x0 = x0 * s.xscale + s.xoffset;
@@ -95,50 +141,17 @@
         },
 
         // convert iterations to RGB value
-        getRGB: function (i) {
+        _getRGB: function (i) {
             var s = this.settings, r, g, b;
 
             i = i * s.cscale;
+            /*jshint bitwise: false */
             r = (i & s.rmask) >> 16;
             g = (i & s.gmask) >> 8;
             b = (i & s.bmask) >> 0;
+            /*jshint bitwise: true */
 
             return {r: r, g: g, l: b};
-        },
-
-        // draw the fractal on the image data
-        drawPixels: function (pixels) {
-            var s = this.settings, x, y, i, rgb, n = 0;
-
-            for (y = 0; y < this.cheight; y += 1) {
-                for (x = 0; x < this.cwidth; x += 1) {
-                    i = this.getIterations(x, y);
-                    rgb = this.getRGB(i);
-
-                    pixels[n]     = rgb.r;
-                    pixels[n + 1] = rgb.g;
-                    pixels[n + 2] = rgb.b;
-                    pixels[n + 3] = 255; // alpha
-
-                    n += 4;
-                }
-            }
-        },
-
-        // create the fractal
-        generate: function (options, cwidth, cheight) {
-            var imageData, pixels;
-
-            if (options) {
-                this.update(options, cwidth, cheight);
-            }
-
-            imageData = this.context.createImageData(this.cwidth, this.cheight);
-            pixels    = imageData.data;
-
-            this.calc();
-            this.drawPixels(pixels);
-            this.context.putImageData(imageData, 0, 0);
         }
     };
 
