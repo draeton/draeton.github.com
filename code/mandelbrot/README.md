@@ -2,6 +2,8 @@
 
 ### TODO:
 
+* `generate` method should either return pixels or write pixels to a canvas argument
+* caching?
 * smoothing algorithm
 * zoom
 * pan
