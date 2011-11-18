@@ -2,6 +2,7 @@
 
 ### TODO:
 
+* smoothing algorithm
 * zoom
 * pan
 * rotate
