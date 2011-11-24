@@ -17,9 +17,10 @@
     var c = {
         // font size and positioning
         fontsize   : 12,
-        lineheight : 15,
+        lineheight : 20,
         font       : "12px Courier",
         baseline   : "top",
+        yoffset    : (20 - 12) / 2 - 1,
 
         // font colors
         linecolor  : "blue",
@@ -28,7 +29,7 @@
         // text start position
         top        : 10,
         left       : 15,
-        indent     : 10,
+        indent     : 8,
 
         // canvas width
         width      : 600,
@@ -110,6 +111,10 @@
         // write the code
         "writeLine": function (i, line) {
             var s = this.settings;
+            var linex = s.left + s.indent - c.indent;
+            var liney = i * s.lineheight + s.top + s.yoffset
+            var codex = s.left + s.indent;
+            var codey = i * s.lineheight + s.top + s.yoffset;
 
             if (i % 2) {
                 // draw an alternating background
@@ -117,8 +122,8 @@
                 this.context.fillRect(0, i * s.lineheight + s.top, s.width, s.lineheight);
             }
 
-            this.writeTextRight(i + 1, s.indent, i * s.lineheight + s.top, s.linecolor);
-            this.writeText(line, s.left + s.indent, i * s.lineheight + s.top, s.codecolor);
+            this.writeTextRight(i + 1, linex, liney, s.linecolor);
+            this.writeText(line, codex, codey, s.codecolor);
         },
 
         // parse the code from the pre element
