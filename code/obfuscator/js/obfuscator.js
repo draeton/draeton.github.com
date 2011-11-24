@@ -44,7 +44,7 @@
                 text = decodeURIComponent(text);
             }
 
-            var code = $.trim(text).split(/\n/);
+            var code = $.trim(text).split("\n");
 
             return $(code).filter(function (i, line) {
                 return !c.check.test(line);
@@ -59,10 +59,6 @@
             canvas.height = code.length * c.lineheight + c.top * 2;
             canvas.style.width = canvas.width + "px";
             canvas.style.height = canvas.height + "px";
-
-            if (typeof FlashCanvas !== "undefined") {
-                FlashCanvas.initElement(canvas);
-            }
 
             return canvas;
         },
