@@ -84,6 +84,10 @@
             canvas.style.width = canvas.width + "px";
             canvas.style.height = canvas.height + "px";
 
+            if (typeof FlashCanvas !== "undefined") {
+                FlashCanvas.initElement(canvas);
+            }
+
             return canvas;
         },
 
