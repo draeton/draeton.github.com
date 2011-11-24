@@ -23,11 +23,10 @@
         ymax: 1,
 
         // current zoom
-        zoom: 1,
+        zoom: 1.2,
 
         // scale set to canvas
-        xscale : null,
-        yscale : null,
+        scale : null,
         xoffset: null,
         yoffset: null,
 
@@ -35,7 +34,7 @@
         K: 2,
 
         // max iterations
-        imax: 255
+        imax: 0xFF
     };
 
     Mandelbrot.prototype = {
@@ -81,6 +80,7 @@
 
             this._calc();
             this._drawPixels(pixels);
+            this.context.rotate(Math.PI*2/6);
             this.context.putImageData(imageData, 0, 0);
         },
 
@@ -88,8 +88,7 @@
         _calc: function () {
             var s = this.settings;
             
-            s.xscale  = (s.xmax - s.xmin) / (this.cwidth * s.zoom);
-            s.yscale  = (s.ymax - s.ymin) / (this.cheight * s.zoom);
+            s.scale  = (s.xmax - s.xmin) / (this.cwidth * s.zoom);
             s.xoffset = s.xmin / s.zoom;
             s.yoffset = s.ymin / s.zoom;
             
@@ -119,8 +118,8 @@
         _getIterations: function (x0, y0) {
             var s = this.settings, x  = 0, y = 0, i, xtemp;
 
-            x0 = x0 * s.xscale + s.xoffset;
-            y0 = y0 * s.yscale + s.yoffset;
+            x0 = x0 * s.scale + s.xoffset;
+            y0 = y0 * s.scale + s.yoffset;
 
             for (i = 0; ((x * x + y * y) < (s.K * s.K)) && i < s.imax; i++) {
                 xtemp = x * x - y * y + x0;
@@ -129,21 +128,6 @@
             }
 
             return ((x * x + y * y) < (s.K * s.K)) ? 0 : i;
-        },
-
-        // convert iterations to RGB value
-        _getRGB: function (i0, imax) {
-            var i, r, g, b;
-
-            i = (i0 / imax) * 0xFFFFFF;
-
-            /*jshint bitwise: false */
-            r = (i & 0xFF0000) >> 16;
-            g = (i & 0x00FF00) >> 8;
-            b = (i & 0x0000FF) >> 0;
-            /*jshint bitwise: true */
-
-            return {r: r, g: g, b: b};
         },
 
         // convert iterations to HSV value
