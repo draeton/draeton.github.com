@@ -27,8 +27,8 @@
 
         // text start position
         top        : 10,
-        left       : 10,
-        indent     : 20,
+        left       : 15,
+        indent     : 10,
 
         // canvas width
         width      : 600,
@@ -128,7 +128,7 @@
             var s = this.settings;
 
             this.code = this.getCode(innerText, className);
-            s.indent = 12 * (this.code.length + "").length;
+            s.indent = c.indent * (this.code.length + "").length;
             this.canvas = this.getCanvas(this.code);
             $(this.element).after(this.canvas);
             this.context = this.canvas.getContext("2d");
