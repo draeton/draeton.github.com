@@ -125,8 +125,10 @@
         // place and get the canvas
         // get the drawing context
         "replaceCodeBlock": function (innerText, className) {
+            var s = this.settings;
+
             this.code = this.getCode(innerText, className);
-            c.indent = 12 * (this.code.length + "").length;
+            s.indent = 12 * (this.code.length + "").length;
             this.canvas = this.getCanvas(this.code);
             $(this.element).after(this.canvas);
             this.context = this.canvas.getContext("2d");
