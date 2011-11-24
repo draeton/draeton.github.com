@@ -32,5 +32,13 @@ function%20foo%20()%20%7B%0A%20%20%20%20alert(true)%3B%0A%7D%0A
 <!-- end code examples -->
 </div>
 
+<script>
+// on dom ready, replace each pre with canvas
+$(function () {
+    $("pre.code").each(function () {
+        new Obfuscator(this);
+    });
+});
+</script>
 </body>
 </html>

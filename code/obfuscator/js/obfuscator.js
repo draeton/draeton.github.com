@@ -1,3 +1,11 @@
+/*!
+ * Obfuscator.js
+ * Renders <pre> elements into canvas to prevent cheating
+ * http://draeton.github.com/code/obfuscator/
+ *
+ * Copyright 2011, Matthew Cobbs
+ * Licensed under the MIT license.
+ */
 /*global jQuery, FlashCanvas*/
 (function (window, $) {
 
@@ -29,8 +37,20 @@
         check      : new RegExp("^--remove this line--")
     };
 
-    // method holder
-    var f = {
+    // constructor
+    function Obfuscator (element, options) {
+        this.element = element;
+        this.settings = $.extend({}, c, options);
+        this.replaceCodeBlock(element.innerText, element.className);
+        $(element).remove();
+        return this;
+    }
+
+    // global reference
+    window.Obfuscator = Obfuscator;
+
+    // prototype
+    Obfuscator.prototype = {
         // drawing canvas, context, and code
         canvas: null,
         context: null,
@@ -39,24 +59,28 @@
         // decode the base64 encoded code
         // get the code text as an array of lines
         // filter out the garbage lines
-        "getCode": function (text, className) {
+        "getCode": function (innerText, className) {
+            var s = this.settings;
+
             if (/base64/.test(className)) {
-                text = decodeURIComponent(text);
+                innerText = decodeURIComponent(innerText);
             }
 
-            var code = $.trim(text).split("\n");
+            var code = $.trim(innerText).split("\n");
 
             return $(code).filter(function (i, line) {
-                return !c.check.test(line);
+                return !s.check.test(line);
             });
         },
 
         // create the canvas element with height for the # of lines
         // FlashCanvas for IE support
         "getCanvas": function (code) {
+            var s = this.settings;
+
             var canvas = document.createElement("canvas");
-            canvas.width = c.width;
-            canvas.height = code.length * c.lineheight + c.top * 2;
+            canvas.width = s.width;
+            canvas.height = code.length * s.lineheight + s.top * 2;
             canvas.style.width = canvas.width + "px";
             canvas.style.height = canvas.height + "px";
 
@@ -65,46 +89,45 @@
 
         // write a piece of text to the canvas
         "writeText": function (text, x, y, color, align) {
-            f.context.font         = c.font;
-            f.context.textAlign    = align || "left";
-            f.context.textBaseline = c.baseline;
-            f.context.fillStyle    = color;
-            f.context.fillText(text, x, y);
+            var s = this.settings;
+
+            this.context.font         = s.font;
+            this.context.textAlign    = align || "left";
+            this.context.textBaseline = s.baseline;
+            this.context.fillStyle    = color;
+            this.context.fillText(text, x, y);
         },
 
         "writeTextRight": function (text, x, y, color) {
-            f.writeText(text, x, y, color, "right");
+            this.writeText(text, x, y, color, "right");
         },
 
         // write the line number
         // write the code
         "writeLine": function (i, line) {
+            var s = this.settings;
+
             if (i % 2) {
                 // draw an alternating background
-                f.context.fillStyle   = 'LightCyan';
-                f.context.fillRect(0, i * c.lineheight + c.top, c.width, c.lineheight);
+                this.context.fillStyle   = 'LightCyan';
+                this.context.fillRect(0, i * s.lineheight + s.top, s.width, s.lineheight);
             }
 
-            f.writeTextRight(i + 1, c.indent, i * c.lineheight + c.top, c.linecolor);
-            f.writeText(line, c.left + c.indent, i * c.lineheight + c.top, c.codecolor);
+            this.writeTextRight(i + 1, s.indent, i * s.lineheight + s.top, s.linecolor);
+            this.writeText(line, s.left + s.indent, i * s.lineheight + s.top, s.codecolor);
         },
 
         // parse the code from the pre element
         // place and get the canvas
         // get the drawing context
-        "replaceCodeBlock": function () {
-            f.code = f.getCode(this.innerText, this.className);
-            c.indent = 12 * (f.code.length + "").length;
-            f.canvas = f.getCanvas(f.code);
-            $(this).after(f.canvas);
-            f.context = f.canvas.getContext("2d");
-            $(f.code).each(f.writeLine);
+        "replaceCodeBlock": function (innerText, className) {
+            this.code = this.getCode(innerText, className);
+            c.indent = 12 * (this.code.length + "").length;
+            this.canvas = this.getCanvas(this.code);
+            $(this.element).after(this.canvas);
+            this.context = this.canvas.getContext("2d");
+            $(this.code).each($.proxy(this.writeLine, this));
         }
     };
-
-    // on dom ready, replace each pre with canvas
-    $(function () {
-        $("pre").each(f.replaceCodeBlock).remove();
-    });
 
 })(window, jQuery);
