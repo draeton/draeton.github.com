@@ -112,7 +112,7 @@
         "writeLine": function (i, line) {
             var s = this.settings;
             var linex = s.left + s.indent - c.indent;
-            var liney = i * s.lineheight + s.top + s.yoffset
+            var liney = i * s.lineheight + s.top + s.yoffset;
             var codex = s.left + s.indent;
             var codey = i * s.lineheight + s.top + s.yoffset;
 
