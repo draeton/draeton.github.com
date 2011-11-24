@@ -17,14 +17,15 @@
     var c = {
         // font size and positioning
         fontsize   : 12,
-        lineheight : 20,
+        lineheight : 24,
         font       : "12px Courier",
         baseline   : "top",
-        yoffset    : (20 - 12) / 2 - 1,
+        yoffset    : (24 - 12) / 2 - 2,
 
         // font colors
         linecolor  : "blue",
         codecolor  : "black",
+        rowcolor   : "LightCyan",
 
         // text start position
         top        : 10,
@@ -118,7 +119,7 @@
 
             if (i % 2) {
                 // draw an alternating background
-                this.context.fillStyle   = 'LightCyan';
+                this.context.fillStyle   = s.rowcolor;
                 this.context.fillRect(0, i * s.lineheight + s.top, s.width, s.lineheight);
             }
 
@@ -132,10 +133,19 @@
         "replaceCodeBlock": function (innerText, className) {
             var s = this.settings;
 
+            // get the code from the text
             this.code = this.getCode(innerText, className);
+
+            // determine the indent of the line numbers
             s.indent = c.indent * (this.code.length + "").length;
+
+            // create a canvas
             this.canvas = this.getCanvas(this.code);
-            $(this.element).after(this.canvas);
+
+            // replace the element
+            $(this.element).replaceWith(this.canvas);
+
+            // get the drawing context and starting drawing lines
             this.context = this.canvas.getContext("2d");
             $(this.code).each($.proxy(this.writeLine, this));
         }
