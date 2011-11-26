@@ -3,7 +3,7 @@ layout: post
 title: Installing Docco
 ---
 
-[http://jashkenas.github.com/docco/ Docco] evaluates .coffee or .js files for comments in Markdown syntax to generate documentation.
+[Docco](http://jashkenas.github.com/docco/) evaluates .coffee or .js files for comments in Markdown syntax to generate documentation.
 
 ### Install Node.js
 

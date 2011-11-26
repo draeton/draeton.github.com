@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installing Docco
+title: Installing Pycco
 ---
 
 [Pycco](http://fitzgen.github.com/pycco/) evaluates .py or .js files for comments in Markdown syntax to generate documentation.
