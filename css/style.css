@@ -247,6 +247,12 @@ ul.posts {
   line-height: 1.5em;
 }
 
+.highlight {
+    outline: 1px dotted #bbb;
+    padding: 20px;
+    font-size: 80%;
+}
+
 header {
   color: #a00;
   font-weight: bold;
