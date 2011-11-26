@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Installing Docco
+title: Installing Docco on Windows
 ---
 
-[Docco](http://jashkenas.github.com/docco/) evaluates .coffee or .js files for comments in Markdown syntax to generate documentation.
+[Docco](http://jashkenas.github.com/docco/) evaluates .coffee or .js files for comments in Markdown syntax to generate 
+documentation. The setup process was a little confusing for me on a Windows machine, so I thought I would be friendly
+and document the process for others.
 
 ### Install Node.js
 

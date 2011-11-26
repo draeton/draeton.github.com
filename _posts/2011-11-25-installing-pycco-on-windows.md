@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Installing Pycco
+title: Installing Pycco on Windows
 ---
 
-[Pycco](http://fitzgen.github.com/pycco/) evaluates .py or .js files for comments in Markdown syntax to generate documentation.
+[Pycco](http://fitzgen.github.com/pycco/) evaluates .py or .js files for comments in Markdown syntax to generate 
+documentation. The setup process was a little confusing for me on a Windows machine, so I thought I would be friendly
+and document the process for others.
 
 
 ### Install Python
