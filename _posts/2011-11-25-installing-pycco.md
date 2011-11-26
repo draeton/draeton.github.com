@@ -17,7 +17,7 @@ title: Installing Pycco
 ### Install Pygments
 
 1. Download [Pygments 1.4](https://bitbucket.org/birkenfeld/pygments-main/downloads)
-2. Extract to `%PYTHON_PATH%/Scripts/pygments-1.4/`
+2. Extract the compressed file to `%PYTHON_PATH%/Scripts/pygments-1.4/`
 3. Start a command prompt at `%PYTHON_PATH%/Scripts/pygments-1.4/`
 4. From the command prompt, run `python setup.py install`
 
@@ -25,8 +25,9 @@ title: Installing Pycco
 ### Install Pycco
 
 1. Download [pycco](https://github.com/fitzgen/pycco/downloads)
-2. Extract the compressed file to a directory and navigate to it
-3. From the command prompt, run `python setup.py install`
+2. Extract the compressed file to `%PYTHON_PATH%/Scripts/pycco/`
+3. Start a command prompt at `%PYTHON_PATH%/Scripts/pycco/`
+4. From the command prompt, run `python setup.py install`
 
 
 ### Run Pycco

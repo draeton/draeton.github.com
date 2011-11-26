@@ -23,7 +23,7 @@ title: Installing Docco
 ### Install Pygments
 
 1. Download [Pygments 1.4](https://bitbucket.org/birkenfeld/pygments-main/downloads)
-2. Extract to `%PYTHON_PATH%/Scripts/pygments-1.4/`
+2. Extract the compressed file to `%PYTHON_PATH%/Scripts/pygments-1.4/`
 3. Start a command prompt at `%PYTHON_PATH%/Scripts/pygments-1.4/`
 4. From the command prompt, run `python setup.py install`
 
@@ -31,8 +31,8 @@ title: Installing Docco
 ### Install CoffeeScript
 
 1. Download [coffeescript](http://coffeescript.org/#top)
-2. Extract to `%NODE_PATH%/node_modules/coffee-script/`
-3. Create a file called `%NODE_PATH%/coffee.cmd`
+2. Extract the compressed file to `%NODE_PATH%/node_modules/coffee-script/`
+3. Create a file called `%NODE_PATH%/coffee.cmd`...
 
 Use the following contents:
 
@@ -44,7 +44,7 @@ Use the following contents:
 
 1. Download [docco](https://github.com/jashkenas/docco/downloads)
 2. Extract to `%NODE_PATH%/node_modules/docco/`
-3. Create a file called `%NODE_PATH%/docco.cmd`
+3. Create a file called `%NODE_PATH%/docco.cmd`...
 
 Use the following contents:
 
