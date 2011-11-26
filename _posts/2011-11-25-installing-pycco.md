@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installing Pycco
+title: Installing Docco
 ---
 
 [Pycco](http://fitzgen.github.com/pycco/) evaluates .py or .js files for comments in Markdown syntax to generate documentation.
@@ -23,8 +23,8 @@ title: Installing Pycco
 
 ### Install Pygments
 
-* Restart the command prompt
-* From the command prompt, run `easy_install Pygments`
+1. Restart the command prompt
+2. From the command prompt, run `easy_install Pygments`
 
 
 ### Install Pycco
