@@ -34,25 +34,25 @@ title: Installing Docco
 ### Install CoffeeScript
 
 1. Download coffeescript -> [http://coffeescript.org/#top](http://coffeescript.org/#top)
-2. Extract to `%NODE_PATH%/coffee-script/`
+2. Extract to `%NODE_PATH%/node_modules/coffee-script/`
 3. Create a file called `%NODE_PATH%/coffee.cmd`
 
 Use the following contents:
 
     @echo off
-    "%NODE_PATH%/node.exe" "%NODE_PATH%/coffee-script/bin/coffee" %*
+    "%NODE_PATH%/node.exe" "%NODE_PATH%/node_modules/coffee-script/bin/coffee" %*
 
 
 ### Install Docco
 
 1. Download docco -> [https://github.com/jashkenas/docco/downloads](https://github.com/jashkenas/docco/downloads)
-2. Extract to `%NODE_PATH%/docco/`
+2. Extract to `%NODE_PATH%/node_modules/docco/`
 3. Create a file called `%NODE_PATH%/docco.cmd`
 
 Use the following contents:
 
     @echo off
-    "%NODE_PATH%/node.exe" "%NODE_PATH%/docco/bin/docco" %*
+    "%NODE_PATH%/node.exe" "%NODE_PATH%/node_modules/docco/bin/docco" %*
 
 
 ### Run Docco
