@@ -20,15 +20,12 @@ title: Installing Docco
 4. Add `%PYTHON_PATH%\Scripts` to `PATH` environment variable
 
 
-### Install Easy Install#
-
-1. Download file -> [http://peak.telecommunity.com/dist/ez_setup.py](http://peak.telecommunity.com/dist/ez_setup.py)
-2. Run `python ez_setup.py`
-
-
 ### Install Pygments
 
-1. Run `easy_install Pygments`
+1. Download Pygments 1.4 -> [https://bitbucket.org/birkenfeld/pygments-main/downloads](https://bitbucket.org/birkenfeld/pygments-main/downloads)
+2. Extract to `%PYTHON_PATH%/Scripts/pygments-1.4/`
+3. Start a command prompt at `%PYTHON_PATH%/Scripts/pygments-1.4/`
+4. From the command prompt, run `python setup.py install`
 
 
 ### Install CoffeeScript
@@ -40,7 +37,7 @@ title: Installing Docco
 Use the following contents:
 
     @echo off
-    "%NODE_PATH%/node.exe" "%NODE_PATH%/node_modules/coffee-script/bin/coffee" %*
+    node.exe %~dp0\.\node_modules\coffee-script\bin\coffee %*
 
 
 ### Install Docco
@@ -52,7 +49,7 @@ Use the following contents:
 Use the following contents:
 
     @echo off
-    "%NODE_PATH%/node.exe" "%NODE_PATH%/node_modules/docco/bin/docco" %*
+    node.exe %~dp0\.\node_modules\docco\bin\docco %*
 
 
 ### Run Docco

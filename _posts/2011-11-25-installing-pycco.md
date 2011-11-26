@@ -14,17 +14,12 @@ title: Installing Pycco
 4. Add `%PYTHON_PATH%\Scripts` to the `PATH` System environment variable
 
 
-### Install Easy Install
-
-1. Download [easy install](http://peak.telecommunity.com/dist/ez_setup.py)
-2. Start a command prompt where you downloaded the file
-3. From the command prompt, run `python ez_setup.py`
-
-
 ### Install Pygments
 
-1. Restart the command prompt
-2. From the command prompt, run `easy_install Pygments`
+1. Download Pygments 1.4 -> [https://bitbucket.org/birkenfeld/pygments-main/downloads](https://bitbucket.org/birkenfeld/pygments-main/downloads)
+2. Extract to `%PYTHON_PATH%/Scripts/pygments-1.4/`
+3. Start a command prompt at `%PYTHON_PATH%/Scripts/pygments-1.4/`
+4. From the command prompt, run `python setup.py install`
 
 
 ### Install Pycco
