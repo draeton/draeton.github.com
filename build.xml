@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="draeton.github.com" basedir="." default="commit">
+    
+    <macrodef name="git">
+        <attribute name="command"/>
+        <attribute name="failonerror" default="true"/>
+        <attribute name="dir" default=""/>
+        <element name="args" optional="true"/>
+        <sequential>
+            <echo message="git @{command}"/>
+            <exec executable="git" dir="@{dir}">
+                <arg line="@{command}"/>
+                <args/>
+            </exec>
+        </sequential>
+    </macrodef>
+    
+    <target name="commit" description="Commit new build to master git repo">
+        <input message="Please enter a commit message:" addproperty="commit.message"/>
+        
+        <git command="add">
+            <args><arg line="."/></args>
+        </git>
+        <git command="commit">
+            <args><arg value="-am ${commit.message}"/></args>
+        </git>
+        <git command="push">
+            <args>
+                <arg value="origin"/>
+                <arg value="master"/>
+            </args>
+        </git>
+    </target>
+    
+</project>
