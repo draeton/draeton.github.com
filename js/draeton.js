@@ -9,8 +9,30 @@
 /*global jQuery*/
 (function (window, $) {
     
-    $(function () {
+    window.Draeton = (function () {
         
-    });
+        function init () {
+            searchInit();
+        }
+        
+        function searchInit () {
+            var sregex = /[?|&]gsc=([^&]+)/,
+                search = document.location.search,
+                $input = $("input.gsc-input"),
+                matches = search.match(sregex);
+
+            if (matches) {
+                $input.focus().val(matches[1]).parents("form").submit();
+            }   
+        }
+        
+        return {
+            init: init,
+            searchInit: searchInit
+        }
+        
+    })();
+    
+    $(Draeton.init);
     
 })(window, jQuery);
