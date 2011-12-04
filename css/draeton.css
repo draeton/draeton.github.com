@@ -6,7 +6,15 @@ body {
     padding: 30px;
     margin-bottom: 15px;
 }
+.hero-unit h1 {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
 
 #comments {
     margin-top: 30px;
+}
+
+.text-right {
+    text-align: right;
 }
