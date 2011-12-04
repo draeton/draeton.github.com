@@ -9,10 +9,23 @@
 /*global jQuery*/
 (function (window, $) {
     
+    var document = window.document;
+    
     window.Draeton = (function () {
         
         function init () {
+            menuInit();
             searchInit();
+        }
+        
+        function menuInit () {
+            var href = document.location.href;
+            
+            $("nav a").each(function () {
+                if (this.href === href) {
+                    $(this).addClass("active");
+                }
+            });            
         }
         
         function searchInit () {
@@ -27,8 +40,7 @@
         }
         
         return {
-            init: init,
-            searchInit: searchInit
+            init: init
         }
         
     })();
