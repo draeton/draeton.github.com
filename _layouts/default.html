@@ -21,7 +21,7 @@
   <!-- link rel="stylesheet" href="/css/style.css" -->
   <!-- end CSS-->
 
-  <!-- for html5 -->
+  <!-- Loading everything with Modernizr -->
   <script src="/js/libs/modernizr-2.0.6.min.js"></script>
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
@@ -36,17 +36,6 @@
 </head>
 
 <body>
-    <!-- facebook api start -->
-    <div id="fb-root"></div>
-    <script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=289961234369425";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
 
     <!-- top navigation -->
     <nav>
@@ -81,6 +70,9 @@
             </div>
             <div class="row">
                 <div class="span10">
+                    
+                    {{ content }}
+                    
                 </div>
                 <div class="span4">
                 </div>
@@ -109,44 +101,47 @@
             </div>
         </div>
     </footer>
+    
+    <!-- facebook api start -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=289961234369425";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-<div class="site">
-
-    <header>
-        <a href="/">Matthew Cobbs</a>
-        <a class="extra" href="/">home</a>
-    </header>
-
-    <section id="main" role="main">
-
-        {{ content }}
-        
-    </section>
-
-    <footer>
-    </footer>
-
-</div> <!--! end of .site -->
-
+    <!-- github banner -->
     <a href="https://github.com/draeton/">
         <img style="position: absolute; top: 40px; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67%22%20alt=%22Fork%20me%20on%20GitHub" alt="Fork me on GitHub" /></a>
 
-<script>
-window._gaq = [
-    ['_setAccount','UA-16683389-1'],
-    ['_setDomainName', 'draeton.github.com'],
-    ['_trackPageview'],
-    ['_trackPageLoadTime']
-];
-Modernizr.load({
-    load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-});
-</script>
+    <!-- loading scripts and analytics -->
+    <script>
+    window._gaq = [
+        ['_setAccount','UA-16683389-1'],
+        ['_setDomainName', 'draeton.github.com'],
+        ['_trackPageview'],
+        ['_trackPageLoadTime']
+    ];
+    Modernizr.load({
+        load: [
+            '//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js',
+            '/bootstrap/js/bootstrap-dropdown.js',
+            '/bootstrap/js/bootstrap-buttons.js',
+            '/bootstrap/js/bootstrap-alerts.js',
+            '/bootstrap/js/bootstrap-modal.js',
+            ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+        ]
+    });
+    </script>
 
-<!--[if lt IE 7 ]>
-<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-<![endif]-->
+    <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
 
 </body>
 </html>
