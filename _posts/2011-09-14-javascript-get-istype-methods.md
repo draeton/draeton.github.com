@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Javascript getIsType Method
+title: JavaScript getIsType Method
 ---
 
 This is a little script I wrote which uses currying to produce
