@@ -10,9 +10,13 @@
 (function (window, $) {
     
     $(function () {
-        $("#cse-modal").modal({
-            keyboard: true
-        });
+        
+        var $cseModal = $("#cse-modal");
+        
+        $cseModal.modal({keyboard: true});
+        
+        $cseModal.modal('show');
+        
     });
     
 })(window, jQuery);
