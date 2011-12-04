@@ -21,9 +21,9 @@
         function menuInit () {
             var href = document.location.href;
             
-            $("nav a").each(function () {
+            $("nav li > a").each(function () {
                 if (this.href === href) {
-                    $(this).addClass("active");
+                    $(this).parents("li").addClass("active");
                 }
             });            
         }
