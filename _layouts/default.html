@@ -99,7 +99,7 @@
     <!-- github banner -->
     <!-- a href="https://github.com/draeton/">
         <img style="position: absolute; top: 40px; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67%22%20alt=%22Fork%20me%20on%20GitHub" alt="Fork me on GitHub" /></a -->
-
+    
     <!-- loading scripts and analytics -->
     <script>
     window._gaq = [
@@ -115,10 +115,28 @@
             '/bootstrap/js/bootstrap-buttons.js',
             '/bootstrap/js/bootstrap-alerts.js',
             '/bootstrap/js/bootstrap-modal.js',
+            '/js/draeton.js',
             ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
         ]
     });
     </script>
+    
+    <!-- google custom search -->
+    <div id="cse-modal">
+        <div id="cse">Loading</div>
+        <script src="//www.google.com/jsapi" type="text/javascript"></script>
+        <script type="text/javascript"> 
+          google.load('search', '1', {language : 'en', style : google.loader.themes.SHINY});
+          google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl(
+              '013680153194229295273:4xubroyqcd4');
+
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+          }, true);
+        </script>
+    </div>
+    <link rel="stylesheet" href="/css/gsearch.css">
 
     <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
