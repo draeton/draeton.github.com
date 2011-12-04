@@ -29,16 +29,11 @@ title: Matthew Cobbs, Detroit Web Developer
     <h3>Tanchor <small>The (anchor) URL parsing library.</small> 
         <a href="/tanchor" class="btn small info">Learn more &raquo;</a></h3>
     
-    
-    
-    
     <h2>Blog Posts</h2>
     
-    <ul class="posts">
-    {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
+{% for post in site.posts %}
+    <h3><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h3>
+{% endfor %}
     
 </section>
     
