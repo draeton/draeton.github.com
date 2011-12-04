@@ -1,0 +1,25 @@
+---
+layout: default
+title: Matthew Cobbs, Detroit Web Developer
+---
+
+<!-- start section -->
+<section id="search">
+    <h2>Search</h2>
+    
+    <!-- google custom search -->
+    <div id="cse">Loading</div>
+    <script src="//www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript"> 
+      google.load('search', '1', {language : 'en', style : google.loader.themes.SHINY});
+      google.setOnLoadCallback(function() {
+        var customSearchControl = new google.search.CustomSearchControl(
+          '013680153194229295273:4xubroyqcd4');
+
+        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+        customSearchControl.draw('cse');
+      }, true);
+    </script>
+    <link rel="stylesheet" href="/css/gsearch.css">      
+</section>
+<!-- end section -->

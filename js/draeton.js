@@ -11,16 +11,6 @@
     
     $(function () {
         
-        var $cseModal = $("#cse-modal");
-        
-        $cseModal.modal({
-            keyboard: true,
-            backdrop: true,
-            show: true
-        });
-        
-        $cseModal.modal('show');
-        
     });
     
 })(window, jQuery);
