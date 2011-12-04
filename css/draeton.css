@@ -4,7 +4,7 @@ body {
 
 .hero-unit {
     padding: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 24px;
 }
 .hero-unit h1 {
     font-size: 45px;
@@ -17,5 +17,5 @@ body {
 
 #osprojects,
 #blogposts {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
