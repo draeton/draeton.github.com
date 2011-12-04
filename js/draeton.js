@@ -22,7 +22,7 @@
             var href = document.location.href;
             
             $("nav li > a").each(function () {
-                if (this.href.indexOf.replace(/[/#]+$/, "") === href.replace(/[/#]+$/, "")) {
+                if (this.href.replace(/[/#]+$/, "") === href.replace(/[/#]+$/, "")) {
                     $(this).parents("li").addClass("active");
                 }
             });            
