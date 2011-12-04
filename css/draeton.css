@@ -18,3 +18,7 @@ body {
 section {
     margin-bottom: 24px;
 }
+
+pre code {
+    background: none;
+}
