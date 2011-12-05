@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Check if image exists in Javascript
+title: Check if image exists in JavaScript
 categories:
   - javascript
   - library

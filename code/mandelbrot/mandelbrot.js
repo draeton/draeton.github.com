@@ -1,5 +1,5 @@
 /*!
- * Mandelbrot generator for HTML5 canvas
+ * Fractals generator for HTML5 canvas
  * http://draeton.github.com/code/mandelbrot/
  *
  * Copyright 2011, Matthew Cobbs
@@ -34,7 +34,10 @@
         K: 2,
 
         // max iterations
-        imax: 0xFF
+        imax: 0xFF,
+        
+        // granularity
+        grain: 1
     };
 
     Mandelbrot.prototype = {
@@ -78,14 +81,14 @@
             imageData = this.context.createImageData(this.cwidth, this.cheight);
             pixels    = imageData.data;
 
-            this._calc();
-            this._drawPixels(pixels);
+            this._setVars();
+            this._setPixels(pixels);
             this.context.rotate(Math.PI*2/6);
             this.context.putImageData(imageData, 0, 0);
         },
 
         // calculate dependent variables
-        _calc: function () {
+        _setVars: function () {
             var s = this.settings;
             
             s.scale  = (s.xmax - s.xmin) / (this.cwidth * s.zoom);
@@ -96,7 +99,7 @@
         },
 
         // draw the fractal on the image data
-        _drawPixels: function (pixels) {
+        _setPixels: function (pixels) {
             var s = this.settings, imax = s.imax, x, y, i, rgb, n = 0;
 
             for (y = 0; y < this.cheight; y += 1) {
@@ -121,7 +124,7 @@
             x0 = x0 * s.scale + s.xoffset;
             y0 = y0 * s.scale + s.yoffset;
 
-            for (i = 0; ((x * x + y * y) < (s.K * s.K)) && i < s.imax; i++) {
+            for (i = 0; ((x * x + y * y) < (s.K * s.K)) && i < s.imax; i += s.grain) {
                 xtemp = x * x - y * y + x0;
                 y = 2 * x * y + y0;
                 x = xtemp;
