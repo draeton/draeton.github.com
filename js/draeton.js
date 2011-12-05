@@ -14,11 +14,11 @@
     window.Draeton = (function () {
         
         function init () {
-            menuInit();
-            searchInit();
+            initMenu();
+            initSearch();
         }
         
-        function menuInit () {
+        function initMenu () {
             var href = document.location.href;
             
             $("nav li > a").each(function () {
@@ -28,7 +28,7 @@
             });            
         }
         
-        function searchInit () {
+        function initSearch () {
             var sregex = /[?|&]gsc=([^&]+)/,
                 search = document.location.search,
                 $input = $("input.gsc-input"),
