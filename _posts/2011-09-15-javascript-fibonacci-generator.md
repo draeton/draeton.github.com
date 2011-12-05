@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Fibonacci Generator in JavaScript
+categories:
+  - javascript
+  - algorithm
 ---
 
 Fibonacci is always a fun and easy algorithm to implement.

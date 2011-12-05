@@ -40,6 +40,9 @@ title: Matthew Cobbs, Detroit Web Developer
     
 {% for post in site.posts %}
     <h4><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+    {% if post.teaser %}
+    <p>&raquo; {{ post.teaser }}</p>
+    {% endif %}
 {% endfor %}
 </section>
 <!-- end section -->
