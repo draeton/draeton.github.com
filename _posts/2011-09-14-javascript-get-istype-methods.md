@@ -1,11 +1,10 @@
 ---
 layout: post
 title: JavaScript getIsType Method
+teaser: This is a little script I wrote which uses currying to produce a set of type checking methods.
 categories:
   - javascript
   - library
-teaser: This is a little script I wrote which uses currying to produce
-a set of type checking methods.
 ---
 
 This is a little script I wrote which uses currying to produce

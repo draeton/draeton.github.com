@@ -1,13 +1,12 @@
 ---
 layout: post
 title: Installing Docco on Windows
+teaser: Docco evaluates .coffee or .js files for comments in Markdown syntax to generate documentation.
 categories:
   - documentation
   - javascript
   - build
   - coffeescript
-teaser: Docco evaluates .coffee or .js files for comments in Markdown syntax to generate 
-documentation.
 ---
 
 [Docco](http://jashkenas.github.com/docco/) evaluates .coffee or .js files for comments in Markdown syntax to generate 

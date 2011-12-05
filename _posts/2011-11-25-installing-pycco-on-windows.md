@@ -1,13 +1,12 @@
 ---
 layout: post
 title: Installing Pycco on Windows
+teaser: Pycco evaluates .py or .js files for comments in Markdown syntax to generate documentation.
 categories:
   - documentation
   - javascript
   - build
   - python
-teaser: Pycco evaluates .py or .js files for comments in Markdown syntax to generate 
-documentation.
 ---
 
 [Pycco](http://fitzgen.github.com/pycco/) evaluates .py or .js files for comments in Markdown syntax to generate 

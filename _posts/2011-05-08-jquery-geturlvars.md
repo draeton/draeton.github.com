@@ -1,12 +1,11 @@
 ---
 layout: post
 title: $.getUrlVars (jQuery)
+teaser: `$.getUrlVars` differs from other implementations by interpreting both the `search` and `hash` as members of the same object.
 categories:
   - jquery
   - javascript
   - library
-teaser: `$.getUrlVars` differs from other implementations by interpreting
-both the `search` and `hash` as members of the same object.
 ---
 
 This is my take on an often necessary task, especially since the
