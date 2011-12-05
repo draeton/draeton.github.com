@@ -10,19 +10,20 @@ body {
 </head>
 <body>
 
-<canvas id="mandelbrot" width="700" height="400"></canvas>
+<canvas id="mandy" width="700" height="400"></canvas>
 
-<script src="mandelbrot.js"></script>
+<script src="mandy.js"></script>
 <script>
 (function () {
-    var canvas = document.getElementById("mandelbrot");
+    var canvas = document.getElementById("mandy");
     var options = {
-        zoom: 0.75
+        zoom: 1.5,
+        grain: 0.1
     };
     var cwidth = canvas.width;
     var cheight = canvas.height;
 
-    var mandy = new Mandelbrot(canvas, options, cwidth, cheight);
+    var mandy = new Mandy(canvas, options, cwidth, cheight);
 
     mandy.generate()
 
