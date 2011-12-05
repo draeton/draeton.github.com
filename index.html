@@ -40,11 +40,11 @@ title: Matthew Cobbs, Detroit Web Developer
     
 {% for post in site.posts %}
 
-    <h4
-    {% if post.teaser %}
-        data-placement="left" rel="twipsy" title="{{ post.teaser }}"
-    {% endif %}
-    ><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+    <h4><a href="{{ post.url }}"
+        {% if post.teaser %}
+            data-placement="above" rel="twipsy" title="{{ post.teaser }}"
+        {% endif %}
+        >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
     
 {% endfor %}
 </section>

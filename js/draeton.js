@@ -41,7 +41,7 @@
         }
         
         function bindHandlers () {
-            $("h4[rel=twipsy]").twipsy({live: true});
+            $("a[rel=twipsy]").twipsy({live: true});
         }
         
         return {
