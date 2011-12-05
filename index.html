@@ -39,10 +39,13 @@ title: Matthew Cobbs, Detroit Web Developer
     <h2>Blog Posts</h2>
     
 {% for post in site.posts %}
-    <h4><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+
+    <h4
     {% if post.teaser %}
-    <blockquote>{{ post.teaser }}</blockquote>
+        data-placement="above" rel="twipsy" title="{{ post.teaser }}"
     {% endif %}
+    ><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+    
 {% endfor %}
 </section>
 <!-- end section -->
