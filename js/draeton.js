@@ -16,6 +16,7 @@
         function init () {
             initMenu();
             initSearch();
+            bindHandlers();
         }
         
         function initMenu () {
@@ -37,6 +38,10 @@
             if (matches) {
                 $input.focus().val(matches[1]).parents("form").submit();
             }   
+        }
+        
+        function bindHandlers () {
+            $("a[rel=twipsy]").twipsy({live: true});
         }
         
         return {
