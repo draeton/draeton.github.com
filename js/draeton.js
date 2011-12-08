@@ -41,7 +41,9 @@
         }
         
         function bindHandlers () {
-            $("a[rel=twipsy]").twipsy({live: true});
+            if ($.fn.twipsy) {
+                $("a[rel=twipsy]").twipsy({live: true});
+            }
         }
         
         return {
