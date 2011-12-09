@@ -5,7 +5,7 @@ title: Matthew Cobbs, Detroit Web Developer
 
 <!-- start section -->
 <section id="blogposts">    
-    <h2>Blog Posts</h2>
+    <h2>Archives</h2>
     
 {% for post in site.posts %}
 
@@ -18,21 +18,3 @@ title: Matthew Cobbs, Detroit Web Developer
 {% endfor %}
 </section>
 <!-- end section -->
-
-
-<!-- Pagination links -->
-<div class="pagination">
-    <ul>
-    {% if paginator.previous_page %}
-        <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Previous</a></li>
-    {% else %}
-        <li class="prev disabled"><a href="javascript:void(0)">&larr; Previous</a></li>
-    {% endif %}
-        <li class="active"><a href="javascript:void(0)">Page: {{paginator.page}} of {{paginator.total_pages}}</a></li>
-    {% if paginator.next_page %}
-        <li class="next"><a href="/page{{paginator.next_page}}">Next & rarr;</a></li>
-    {% else %}
-        <li class="next disabled"><a href="javascript:void(0)">Next</a></li>
-    {% endif %}
-    </ul>
-</div>
