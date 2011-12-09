@@ -36,7 +36,7 @@ title: Matthew Cobbs, Detroit Web Developer
 
 <!-- start section -->
 <section id="blogposts">    
-    <h2>Ruminations</h2>
+    <h2>Posts <a href="/archives.html" class="btn small info">Read all posts &raquo;</a></h2>
     
 {% for post in site.posts limit:3 %}
 
@@ -47,8 +47,6 @@ title: Matthew Cobbs, Detroit Web Developer
         >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
     
 {% endfor %}
-
-    <a href="/archives.html" class="btn small warning">Read all posts &raquo;</a>
 </section>
 <!-- end section -->
 
