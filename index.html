@@ -47,26 +47,27 @@ title: Matthew Cobbs, Detroit Web Developer
         >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
     
 {% endfor %}
+
+    <!-- start pagination -->
+    <div class="pagination">
+        <ul>
+        {% if paginator.previous_page %}
+            <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Previous</a></li>
+        {% else %}
+            <li class="prev disabled"><a href="javascript:void(0)">&larr; Previous</a></li>
+        {% endif %}
+            <li class="active"><a href="javascript:void(0)">Page: {{paginator.page}} of {{paginator.total_pages}}</a></li>
+        {% if paginator.next_page %}
+            <li class="next"><a href="/page{{paginator.next_page}}">Next &rarr;</a></li>
+        {% else %}
+            <li class="next disabled"><a href="javascript:void(0)">Next &rarr;</a></li>
+        {% endif %}
+        </ul>
+    </div>
+    <!-- end pagination -->
+    
 </section>
 <!-- end section -->
-
-<!-- start pagination -->
-<div class="pagination">
-    <ul>
-    {% if paginator.previous_page %}
-        <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Previous</a></li>
-    {% else %}
-        <li class="prev disabled"><a href="javascript:void(0)">&larr; Previous</a></li>
-    {% endif %}
-        <li class="active"><a href="javascript:void(0)">Page: {{paginator.page}} of {{paginator.total_pages}}</a></li>
-    {% if paginator.next_page %}
-        <li class="next"><a href="/page{{paginator.next_page}}">Next & rarr;</a></li>
-    {% else %}
-        <li class="next disabled"><a href="javascript:void(0)">Next</a></li>
-    {% endif %}
-    </ul>
-</div>
-<!-- end pagination -->
 
 <!-- start section -->
 <section id="comments">
