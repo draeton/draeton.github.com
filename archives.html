@@ -20,32 +20,19 @@ title: Matthew Cobbs, Detroit Web Developer
 <!-- end section -->
 
 
-<div class="pagination">
-  <ul>
-    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li class="next"><a href="#">Next &rarr;</a></li>
-  </ul>
-</div>
-
-
 <!-- Pagination links -->
 <div class="pagination">
     <ul>
     {% if paginator.previous_page %}
-        <li><a href="/page{{paginator.previous_page}}" class="prev">&larr; Previous</a></li>
+        <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Previous</a></li>
     {% else %}
-        <li><a href="javascript:void(0)" class="prev disabled">&larr; Previous</a></li>
+        <li class="prev disabled"><a href="javascript:void(0)">&larr; Previous</a></li>
     {% endif %}
-        <li><a href="javascript:void(0)" class="active">Page: {{paginator.page}} of {{paginator.total_pages}}</a></li>
+        <li class="active"><a href="javascript:void(0)">Page: {{paginator.page}} of {{paginator.total_pages}}</a></li>
     {% if paginator.next_page %}
-        <li><a href="/page{{paginator.next_page}}" class="next ">Next & rarr;</a></li>
+        <li class="next"><a href="/page{{paginator.next_page}}">Next & rarr;</a></li>
     {% else %}
-        <li><a href="javascript:void(0)" class="next disabled">Next</a></li>
+        <li class="next disabled"><a href="javascript:void(0)">Next</a></li>
     {% endif %}
     </ul>
 </div>
