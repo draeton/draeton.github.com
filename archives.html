@@ -1,0 +1,51 @@
+---
+layout: default
+title: Matthew Cobbs, Detroit Web Developer
+---
+
+<!-- start section -->
+<section id="blogposts">    
+    <h2>Blog Posts</h2>
+    
+{% for post in paginator.posts %}
+
+    <h4><a href="{{ post.url }}"
+        {% if post.teaser %}
+            data-placement="right" rel="twipsy" title="{{ post.teaser }}"
+        {% endif %}
+        >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+    
+{% endfor %}
+</section>
+<!-- end section -->
+
+
+<div class="pagination">
+  <ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li class="next"><a href="#">Next &rarr;</a></li>
+  </ul>
+</div>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+    <ul>
+    {% if paginator.previous_page %}
+        <li><a href="/page{{paginator.previous_page}}" class="prev">&larr; Previous</a></li>
+    {% else %}
+        <li><a href="javascript:void(0)" class="prev disabled">&larr; Previous</a></li>
+    {% endif %}
+        <li><a href="javascript:void(0)" class="active">Page: {{paginator.page}} of {{paginator.total_pages}}</a></li>
+    {% if paginator.next_page %}
+        <li><a href="/page{{paginator.next_page}}" class="next ">Next & rarr;</a></li>
+    {% else %}
+        <li><a href="javascript:void(0)" class="next disabled">Next</a></li>
+    {% endif %}
+    </ul>
+</div>
