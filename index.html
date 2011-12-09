@@ -52,7 +52,11 @@ title: Matthew Cobbs, Detroit Web Developer
     <div class="pagination">
         <ul>
         {% if paginator.previous_page %}
+        {%     if paginator.previous_page == 1 %}
+            <li class="prev"><a href="/">&larr; Previous</a></li>
+        {%     else %}
             <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Previous</a></li>
+        {%     endif %}
         {% else %}
             <li class="prev disabled"><a href="javascript:void(0)">&larr; Previous</a></li>
         {% endif %}
