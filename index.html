@@ -6,15 +6,15 @@ title: Matthew Cobbs, Detroit Web Developer
 <!-- start .hero-unit -->
 <div class="hero-unit">
     <h1>Matthew Cobbs <small>Detroit web developer</small></h1>
-    
-    <p>Matthew Cobbs is a 30 year-old web developer from Detroit. As both an in-house and 
-        freelance developer, he has several years of experience with planning, designing, 
-        developing, and maintaining websites. Matthew loves sushi, Almodovar, good fiction, 
+
+    <p>Matthew Cobbs is a 30 year-old web developer from Detroit. As both an in-house and
+        freelance developer, he has several years of experience with planning, designing,
+        developing, and maintaining websites. Matthew loves sushi, Almodovar, good fiction,
         and JavaScript.</p>
-    
-    <p><a href="mailto:draeton@gmail.com" class="btn primary">Email</a> 
-        <a href="http://github.com/draeton/" class="btn success">Github</a> 
-        <a href="http://stackoverflow.com/users/230483/draeton" class="btn success">Stack Overflow</a> 
+
+    <p><a href="mailto:draeton@gmail.com" class="btn primary">Email</a>
+        <a href="http://github.com/draeton/" class="btn success">Github</a>
+        <a href="http://stackoverflow.com/users/230483/draeton" class="btn success">Stack Overflow</a>
         <a href="http://twitter.com/draeton/" class="btn success">Twitter</a></p>
 </div>
 <!-- end .hero-unit -->
@@ -22,22 +22,25 @@ title: Matthew Cobbs, Detroit Web Developer
 <!-- start section -->
 <section id="osprojects">
     <h2>Open Source Projects</h2>
-    
-    <h3>Stitches <small>An HTML5 sprite generator.</small> 
+
+    <h3>Stitches <small>An HTML5 sprite generator.</small>
         <a href="/stitches" class="btn small info">Learn more &raquo;</a></h3>
 
-    <h3>Lockdown <small>Obfuscates code snippets by writing them to the canvas.</small> 
+    <h3>Lockdown <small>Obfuscates code snippets by writing them to the canvas.</small>
         <a href="/lockdown" class="btn small info">Learn more &raquo;</a></h3>
 
-    <h3>Tanchor <small>The (anchor) URL parsing library.</small> 
-        <a href="/tanchor" class="btn small info">Learn more &raquo;</a></h3>        
+    <h3>Tanchor <small>The (anchor) URL parsing library.</small>
+        <a href="/tanchor" class="btn small info">Learn more &raquo;</a></h3>
+
+    <h3>Deeplink <small>Easy-peasy deeplinking manager.</small>
+        <a href="/deeplink" class="btn small info">Learn more &raquo;</a></h3>
 </section>
 <!-- end section -->
 
 <!-- start section -->
-<section id="blogposts">    
+<section id="blogposts">
     <h2>Posts</h2>
-    
+
 {% for post in site.posts limit:3 %}
 
     <h4><a href="{{ post.url }}"
@@ -45,7 +48,7 @@ title: Matthew Cobbs, Detroit Web Developer
             data-placement="right" rel="twipsy" title="{{ post.teaser }}"
         {% endif %}
         >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
-    
+
 {% endfor %}
 
     <h4><a href="/archives.html" class="btn small info">Read all posts &raquo;</a></h4>
