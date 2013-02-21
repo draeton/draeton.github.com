@@ -41,7 +41,7 @@ footer {
 /* Nav bar  */
 
 .navbar-inner {
-    background-image: url(/img/bg/light-tile.gif) repeat;
+    background-image: url(/img/bg/light-tile.gif);
 }
 
 .navbar-form .input-append,
@@ -52,7 +52,7 @@ footer {
 /* Hero unit */
 
 .hero-unit {
-    background-image: url(/img/bg/dark-tile.gif) repeat;
+    background-image: url(/img/bg/dark-tile.gif);
 }
 
 /* General content styles */
