@@ -30,3 +30,45 @@ pre code {
 #osprojects [class*=" icon-"] {
     vertical-align: baseline;
 }
+
+/* Contacts icons */
+
+.contacts {
+    background: url(/img/contacts/sprite.png) no-repeat;
+}
+
+.contacts-github {
+    width: 30px;
+    height: 30px;
+    background-position: -82px -41px;
+}
+
+.contacts-gmail {
+    width: 30px;
+    height: 30px;
+    background-position: -82px -0px;
+}
+
+.contacts-linkedin {
+    width: 30px;
+    height: 30px;
+    background-position: -41px -41px;
+}
+
+.contacts-stackoverflow {
+    width: 30px;
+    height: 30px;
+    background-position: -0px -41px;
+}
+
+.contacts-tumblr {
+    width: 30px;
+    height: 30px;
+    background-position: -41px -0px;
+}
+
+.contacts-twitter {
+    width: 30px;
+    height: 30px;
+    background-position: -0px -0px;
+}
