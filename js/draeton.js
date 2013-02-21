@@ -19,7 +19,6 @@
         init: function () {
             this.bindHandlers();
             this.initMenu();
-            this.initSearch();
         },
 
         bindHandlers: function () {
@@ -36,17 +35,6 @@
                     $(this).parents("li").addClass("active");
                 }
             });
-        },
-
-        initSearch: function () {
-            var sregex = /[?|&]gsc=([^&]+)/,
-                search = document.location.search,
-                $input = $("input.gsc-input"),
-                matches = search.match(sregex);
-
-            if (matches) {
-                $input.focus().val(matches[1]).parents("form").submit();
-            }
         }
     };
 
