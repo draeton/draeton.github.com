@@ -27,10 +27,10 @@ title: Matthew Cobbs, Detroit Web Developer
 <section id="osprojects">
     <h2>Open Source Projects</h2>
 
-    <h4><a href="/stitches">Stitches</a> <small>An HTML5 sprite generator.</small></h4>
-    <h4><a href="/lockdown">Lockdown</a> <small>Obfuscates code snippets by writing them to the canvas.</small></h4>
-    <h4><a href="/tanchor">Tanchor</a> <small>The (anchor) URL parsing library.</small></h4>
-    <h4><a href="/deeplink">Deeplink</a> <small>Easy-peasy deeplinking manager.</small></h4>
+    <h4><a href="/stitches"><i class="icon-briefcase"></i> Stitches</a> <small>An HTML5 sprite generator.</small></h4>
+    <h4><a href="/lockdown"><i class="icon-briefcase"></i> Lockdown</a> <small>Obfuscates code snippets by writing them to the canvas.</small></h4>
+    <h4><a href="/tanchor"><i class="icon-briefcase"></i> Tanchor</a> <small>The (anchor) URL parsing library.</small></h4>
+    <h4><a href="/deeplink"><i class="icon-briefcase"></i> Deeplink</a> <small>Easy-peasy deeplinking manager.</small></h4>
 </section>
 <!-- end section -->
 
@@ -44,7 +44,7 @@ title: Matthew Cobbs, Detroit Web Developer
         {% if post.teaser %}
             data-toggle="tooltip" data-placement="right" title="{{ post.teaser }}"
         {% endif %}
-        >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+        ><i class="icon-arrow-right"></i> {{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
 
 {% endfor %}
 
