@@ -14,16 +14,6 @@ footer {
 
 /* General content styles */
 
-.hero-unit {
-    padding: 30px;
-    margin-bottom: 24px;
-}
-
-.hero-unit h1 {
-    font-size: 45px;
-    margin-bottom: 12px;
-}
-
 .text-right {
     text-align: right;
 }
