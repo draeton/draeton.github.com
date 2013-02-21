@@ -36,34 +36,32 @@
 <body>
 
     <!-- top navigation -->
-    <nav>
-        <div class="topbar" data-dropdown="dropdown">
-            <div class="fill">
-                <div class="container span10">
-                    <a class="brand" href="/">Matthew Cobbs</a>
-                    <ul class="nav">
-                        <li><a href="/">Home</a></li>
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle">Projects</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/stitches">Stitches</a></li>
-                                <li><a href="/lockdown">Lockdown</a></li>
-                                <li><a href="/tanchor">Tanchor</a></li>
-                                <li><a href="/deeplink">Deeplink</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/archives.html">Archives</a></li>
-                    </ul>
-                    <form action="/search.html" class="search pull-right">
-                        <input name="gsc" type="text" placeholder="Search" class="span3" />
-                    </form>
-                </div>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">Matthew Cobbs</a>
+                <ul class="nav">
+                    <li><a class="active" href="/">Home</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/stitches">Stitches</a></li>
+                            <li><a href="/lockdown">Lockdown</a></li>
+                            <li><a href="/tanchor">Tanchor</a></li>
+                            <li><a href="/deeplink">Deeplink</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/archives.html">Archives</a></li>
+                </ul>
+                <form action="/search.html" class="navbar-form pull-right">
+                    <input class="span3" name="gsc" type="text" placeholder="Search"/>
+                </form>
             </div>
         </div>
-    </nav>
+    </div>
 
     <!-- main content container -->
-    <div class="container span10">
+    <div class="container">
         <div class="content">
 
             {{ content }}
