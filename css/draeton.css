@@ -73,3 +73,13 @@ pre code {
     height: 30px;
     background-position: -0px -0px;
 }
+
+/* Facebook comments (fluid?) */
+
+.fb-comments span {
+    width: 100% !important;
+}
+
+.fb-comments iframe {
+    width: 100% !important;
+}
