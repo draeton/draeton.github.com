@@ -12,6 +12,13 @@ footer {
     padding: 10px 0;
 }
 
+/* Navbar search form */
+
+.navbar-form .input-append,
+.navbar-form .input-prepend {
+    margin-bottom: 0 !important;
+}
+
 /* General content styles */
 
 .text-right {
