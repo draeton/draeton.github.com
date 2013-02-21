@@ -25,9 +25,8 @@
             var $search = $(".navbar form");
 
             // search form
-            $search.on("a.add-on", "click", function () {
-                console.log("submitting");
-                //$search.submit();
+            $search.on("click", "a.add-on", function () {
+                $search.submit();
             });
 
             // tooltips
