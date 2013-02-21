@@ -35,3 +35,8 @@ section {
 pre code {
     background: none;
 }
+
+#osprojects [class^="icon-"],
+#osprojects [class*=" icon-"] {
+    vertical-align: baseline;
+}
