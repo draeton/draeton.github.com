@@ -3,10 +3,13 @@ layout: default
 title: Matthew Cobbs, Detroit Web Developer
 ---
 
+<div class="page-header">
+    <h1>Archives</h1>
+</div>
+
 <!-- start section -->
-<section id="blogposts">    
-    <h2>Archives</h2>
-    
+<section id="blogposts">
+
 {% for post in site.posts %}
 
     <h4><a href="{{ post.url }}"
@@ -14,7 +17,7 @@ title: Matthew Cobbs, Detroit Web Developer
             data-placement="right" rel="twipsy" title="{{ post.teaser }}"
         {% endif %}
         >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
-    
+
 {% endfor %}
 </section>
 <!-- end section -->
