@@ -38,11 +38,21 @@ footer {
     }
 }
 
-/* Navbar search form */
+/* Nav bar  */
+
+.navbar-inner {
+    background-image: url(/img/bg/light-tile.gif) repeat;
+}
 
 .navbar-form .input-append,
 .navbar-form .input-prepend {
     margin-bottom: 0 !important;
+}
+
+/* Hero unit */
+
+.hero-unit {
+    background-image: url(/img/bg/dark-tile.gif) repeat;
 }
 
 /* General content styles */
