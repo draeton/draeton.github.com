@@ -49,7 +49,7 @@ body {
 
 @media (max-width: 480px) {
     .hero-unit {
-        padding: 30px;
+        padding: 30px !important;
     }
 }
 
