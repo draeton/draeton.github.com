@@ -12,12 +12,14 @@ title: Matthew Cobbs, Detroit Web Developer
         developing, and maintaining websites. Matthew loves sushi, Almodovar, good fiction,
         and JavaScript.</p>
 
-    <p><a href="mailto:draeton@gmail.com" class="btn primary">Email</a>
-        <a href="http://github.com/draeton/" class="btn success">Github</a>
-        <a href="http://stackoverflow.com/users/230483/draeton" class="btn success">Stack Overflow</a>
-        <a href="http://www.linkedin.com/in/matthewcobbs/" class="btn success">LinkedIn</a>
-        <a href="http://twitter.com/draeton/" class="btn success">Twitter</a>
-        <a href="http://draeton.tumblr.com/" class="btn success">Tumblr</a></p>
+    <p><div class="btn-group">
+        <a href="mailto:draeton@gmail.com" class="btn btn-primary">Email</a>
+        <a href="http://github.com/draeton/" class="btn btn-info">Github</a>
+        <a href="http://www.linkedin.com/in/matthewcobbs/" class="btn btn-info">LinkedIn</a>
+        <a href="http://stackoverflow.com/users/230483/draeton" class="btn btn-info">Stack Overflow</a>
+        <a href="http://twitter.com/draeton/" class="btn btn-info">Twitter</a>
+        <a href="http://draeton.tumblr.com/" class="btn btn-info">Tumblr</a>
+    </div></p>
 </div>
 <!-- end .hero-unit -->
 
@@ -26,16 +28,16 @@ title: Matthew Cobbs, Detroit Web Developer
     <h2>Open Source Projects</h2>
 
     <h3>Stitches <small>An HTML5 sprite generator.</small>
-        <a href="/stitches" class="btn small info">Learn more &raquo;</a></h3>
+        <a href="/stitches" class="btn btn-small btn-info">Learn more &raquo;</a></h3>
 
     <h3>Lockdown <small>Obfuscates code snippets by writing them to the canvas.</small>
-        <a href="/lockdown" class="btn small info">Learn more &raquo;</a></h3>
+        <a href="/lockdown" class="btn btn-small btn-info">Learn more &raquo;</a></h3>
 
     <h3>Tanchor <small>The (anchor) URL parsing library.</small>
-        <a href="/tanchor" class="btn small info">Learn more &raquo;</a></h3>
+        <a href="/tanchor" class="btn btn-small btn-info">Learn more &raquo;</a></h3>
 
     <h3>Deeplink <small>Easy-peasy deeplinking manager.</small>
-        <a href="/deeplink" class="btn small info">Learn more &raquo;</a></h3>
+        <a href="/deeplink" class="btn btn-small btn-info">Learn more &raquo;</a></h3>
 </section>
 <!-- end section -->
 
@@ -47,7 +49,7 @@ title: Matthew Cobbs, Detroit Web Developer
 
     <h4><a href="{{ post.url }}"
         {% if post.teaser %}
-            data-placement="right" rel="twipsy" title="{{ post.teaser }}"
+            data-toggle="tooltip" data-placement="right" title="{{ post.teaser }}"
         {% endif %}
         >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
 
