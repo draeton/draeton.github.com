@@ -40,6 +40,10 @@ pre code {
 
 /* Contacts icons */
 
+.btn-contacts-mobile > .btn {
+    font-size: 30px !important;
+}
+
 .contacts {
     background: url(/img/contacts/sprite.png) no-repeat;
     display: inline-block;
