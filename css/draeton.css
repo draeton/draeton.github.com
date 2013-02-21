@@ -1,45 +1,15 @@
-html,
+/* For sticky top nav */
+
 body {
-    /* The html and body elements cannot have any padding or margin. */
-    height: 100%;
+    padding-top: 60px;
 }
 
-/* Wrapper for page content to push down footer */
-
-#wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /* Negative indent footer by it's height */
-    margin: 0 auto -70px;
-}
-
-#push,
-footer {
-    /* Set the fixed height of the footer here */
-    height: 70px;
-}
+/* Footer styles */
 
 footer {
     font-size: 80%;
     background-color: #f5f5f5;
-}
-
-/* Lastly, apply responsive CSS fixes as necessary */
-
-@media (max-width: 767px) {
-    footer {
-        margin-left: -20px;
-        margin-right: -20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-/* For sticky top nav */
-
-#wrap > .container {
-    padding-top: 60px;
+    padding: 10px 0;
 }
 
 /* General content styles */

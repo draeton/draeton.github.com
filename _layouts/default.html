@@ -36,53 +36,46 @@
 
 <body>
 
-    <div id="wrap">
-
-        <!-- top navigation -->
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="/">Matthew Cobbs</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li><a class="active" href="/">Home</a></li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/stitches">Stitches</a></li>
-                                    <li><a href="/lockdown">Lockdown</a></li>
-                                    <li><a href="/tanchor">Tanchor</a></li>
-                                    <li><a href="/deeplink">Deeplink</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/archives.html">Archives</a></li>
-                        </ul>
-                        <form action="/search.html" class="navbar-form pull-right">
-                            <input class="span3" name="q" type="text" placeholder="Search"/>
-                        </form>
-                    </div>
+    <!-- top navigation -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="/">Matthew Cobbs</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a class="active" href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/stitches">Stitches</a></li>
+                                <li><a href="/lockdown">Lockdown</a></li>
+                                <li><a href="/tanchor">Tanchor</a></li>
+                                <li><a href="/deeplink">Deeplink</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/archives.html">Archives</a></li>
+                    </ul>
+                    <form action="/search.html" class="navbar-form pull-right">
+                        <input class="span3" name="q" type="text" placeholder="Search"/>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- main content container -->
-        <div class="container">
-            <div class="content">
+    <!-- main content container -->
+    <div class="container">
+        <div class="content">
 
-                {{ content }}
+            {{ content }}
 
-            </div>
         </div>
-
-        <!-- ensure adequate spacing for footer -->
-        <div id="push"></div>
-
-    </div><!-- end #wrap -->
+    </div>
 
     <footer>
         <div class="container">
