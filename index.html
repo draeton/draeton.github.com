@@ -34,8 +34,23 @@ title: Matthew Cobbs, Detroit Web Developer
 <div class="container-fluid">
     <div class="row-fluid">
         <!-- start section -->
+        <section id="osprojects" class="span6">
+            <h2>Open Source Projects</h2>
+
+            <h4><i class="icon-briefcase"></i> <a href="/stitches">Stitches</a><br/>
+                <small>An HTML5 sprite generator.</small></h4>
+            <h4><i class="icon-briefcase"></i> <a href="/lockdown">Lockdown</a><br/>
+                <small>Obfuscates code snippets by writing them to the canvas.</small></h4>
+            <h4><i class="icon-briefcase"></i> <a href="/tanchor">Tanchor</a><br/>
+                <small>The (anchor) URL parsing library.</small></h4>
+            <h4><i class="icon-briefcase"></i> <a href="/deeplink">Deeplink</a><br/>
+                <small>Easy-peasy deeplinking manager.</small></h4>
+        </section>
+        <!-- end section -->
+
+        <!-- start section -->
         <section id="blogposts" class="span6">
-            <h2>Posts</h2>
+            <h2>Posts <a href="/archives.html" class="btn btn-small btn-info">Read all posts &raquo;</a></h2>
 
         {% for post in site.posts limit:6 %}
 
@@ -48,17 +63,6 @@ title: Matthew Cobbs, Detroit Web Developer
         {% endfor %}
 
             <h4><a href="/archives.html" class="btn btn-small btn-info">Read all posts &raquo;</a></h4>
-        </section>
-        <!-- end section -->
-
-        <!-- start section -->
-        <section id="osprojects" class="span6">
-            <h2>Open Source Projects</h2>
-
-            <h4><i class="icon-briefcase"></i> <a href="/stitches">Stitches</a> <small>An HTML5 sprite generator.</small></h4>
-            <h4><i class="icon-briefcase"></i> <a href="/lockdown">Lockdown</a> <small>Obfuscates code snippets by writing them to the canvas.</small></h4>
-            <h4><i class="icon-briefcase"></i> <a href="/tanchor">Tanchor</a> <small>The (anchor) URL parsing library.</small></h4>
-            <h4><i class="icon-briefcase"></i> <a href="/deeplink">Deeplink</a> <small>Easy-peasy deeplinking manager.</small></h4>
         </section>
         <!-- end section -->
     </div>
