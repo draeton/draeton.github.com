@@ -50,6 +50,11 @@ body {
 @media (max-width: 480px) {
     .hero-unit {
         padding: 30px !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        -webkit-border-radius: 0 !important;
+         -moz-border-radius: 0 !important;
+              border-radius: 0 !important;
     }
 }
 
