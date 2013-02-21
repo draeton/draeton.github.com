@@ -22,6 +22,14 @@
         },
 
         bindHandlers: function () {
+            var $search = $(".navbar form");
+
+            // search form
+            $search.on("a.add-on", "click", function () {
+                $search.submit();
+            });
+
+            // tooltips
             if ($.fn.tooltip) {
                 $('a[data-toggle="tooltip"]').tooltip();
             }
@@ -38,6 +46,8 @@
         }
     };
 
-    var draeton = window.draeton = new Draeton();
+    $(document).ready(function () {
+        window.draeton = new Draeton();
+    });
 
 })(window, jQuery);
