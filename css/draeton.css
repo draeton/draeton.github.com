@@ -76,6 +76,10 @@ pre code {
 
 /* Facebook comments (fluid?) */
 
+.fb-comments {
+    width: 100% !important;
+}
+
 .fb-comments span {
     width: 100% !important;
 }
