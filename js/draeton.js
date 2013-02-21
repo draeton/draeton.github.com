@@ -26,7 +26,8 @@
 
             // search form
             $search.on("a.add-on", "click", function () {
-                $search.submit();
+                console.log("submitting");
+                //$search.submit();
             });
 
             // tooltips
