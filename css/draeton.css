@@ -16,6 +16,12 @@ body {
     padding-top: 60px;
 }
 
+@media (max-width: 767px) {
+    #wrap > .container {
+        padding-top: 0;
+    }
+}
+
 #push {
     height: 100px;
 }
