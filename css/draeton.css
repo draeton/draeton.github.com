@@ -35,6 +35,7 @@ pre code {
 
 .contacts {
     background: url(/img/contacts/sprite.png) no-repeat;
+    display: inline-block;
 }
 
 .contacts-github {
