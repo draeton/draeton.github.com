@@ -55,11 +55,11 @@ title: Matthew Cobbs, Detroit Web Developer
 
         {% for post in site.posts limit:6 %}
 
-            <h4><a href="{{ post.url }}"
+            <h5><a href="{{ post.url }}"
                 {% if post.teaser %}
                     data-toggle="tooltip" data-placement="right" title="{{ post.teaser }}"
                 {% endif %}
-                >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
+                >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h5>
 
         {% endfor %}
         </section>
