@@ -175,6 +175,7 @@ pre code {
     padding-bottom: 18px;
     border-bottom: 1px solid #d4d4d4;
     margin-bottom: 24px;
+    clear: both;
 }
 
 #highlights .highlight:last-child {
