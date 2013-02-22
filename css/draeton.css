@@ -176,3 +176,8 @@ pre code {
     border-bottom: 1px solid #d4d4d4;
     margin-bottom: 24px;
 }
+
+#highlights .highlight:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
