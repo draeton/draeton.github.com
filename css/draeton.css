@@ -172,6 +172,7 @@ pre code {
 /* Career highlights */
 
 #highlights .highlight {
+    padding-bottom: 18px;
     border-bottom: 1px solid #d4d4d4;
     margin-bottom: 24px;
 }
