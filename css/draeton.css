@@ -168,3 +168,10 @@ pre code {
 .fb-comments iframe {
     width: 100% !important;
 }
+
+/* Career highlights */
+
+#highlights .highlight {
+    border-bottom: 1px solid #d4d4d4;
+    margin-bottom: 24px;
+}
