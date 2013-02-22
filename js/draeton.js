@@ -31,7 +31,7 @@
 
             // tooltips
             if ($.fn.tooltip) {
-                $('a[data-toggle="tooltip"]').tooltip();
+                $('[data-toggle="tooltip"]').tooltip();
             }
         },
 
