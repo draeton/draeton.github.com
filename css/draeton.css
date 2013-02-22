@@ -184,6 +184,16 @@ pre code {
     border-bottom: 0;
 }
 
-#highlights .highlight-image {
-    margin-left: 20px;
+#highlights .highlight-thumbnail {
+    position: relative;
+}
+
+#highlights .highlight-thumbnail .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    text-indent: 6px;
 }
