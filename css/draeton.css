@@ -183,3 +183,7 @@ pre code {
     padding-bottom: 0;
     border-bottom: 0;
 }
+
+#highlights .highlight-image {
+    margin-left: 20px;
+}
