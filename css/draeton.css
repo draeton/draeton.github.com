@@ -176,6 +176,7 @@ pre code {
     border-bottom: 1px solid #d4d4d4;
     margin-bottom: 24px;
     clear: both;
+    overflow: hidden;
 }
 
 #highlights .highlight:last-child {
