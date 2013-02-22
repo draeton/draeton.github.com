@@ -190,7 +190,7 @@ pre code {
 
 #highlights .highlight-thumbnail .caption {
     position: absolute;
-    bottom: 0;
+    bottom: -6px;
     width: 100%;
     background-color: #000000;
     color: #ffffff;
