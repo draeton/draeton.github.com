@@ -192,13 +192,20 @@ pre code {
     position: absolute;
     bottom: -6px;
     width: 100%;
-    background-color: #000000;
-    color: #ffffff;
     margin: 0;
-    text-indent: 6px;
-    font-size: 12px;
-    line-height: 24px;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    background-repeat: repeat-x;
+    border-top: 1px solid #d4d4d4;
     -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
+    text-indent: 6px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #999999;
 }
