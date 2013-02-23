@@ -4,23 +4,29 @@ layout: default
 
 <h1>{{ page.title }}</h1>
 
-<article id="post">
-    {{ content }}
-</article>
+<div class="row-fluid">
+    <div class="span8">
+        <article id="post">
+            {{ content }}
+        </article>
+    </div>
 
-<section id="related">
-    <h3>Related Posts <small><a href="/archives.html">read all &raquo;</a></small></h3>
+    <div class="span4">
+        <section id="related">
+            <h3>Related Posts <small><a href="/archives.html">read all &raquo;</a></small></h3>
 
-    {% for post in site.related_posts limit:3 %}
+            {% for post in site.related_posts limit:3 %}
 
-        <h5><a href="{{ post.url }}"
-        {% if post.teaser %}
-            data-toggle="tooltip" data-placement="right" title="{{ post.teaser }}"
-        {% endif %}
-        >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h5>
+                <h5><a href="{{ post.url }}"
+                {% if post.teaser %}
+                    data-toggle="tooltip" data-placement="right" title="{{ post.teaser }}"
+                {% endif %}
+                >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h5>
 
-    {% endfor %}
-</section>
+            {% endfor %}
+        </section>
+    </div>
+</div>
 
 <section id="comments">
     <div class="fb-comments" data-href="http://draeton.github.com{{ page.url }}" data-num-posts="10" data-width="940"></div>
