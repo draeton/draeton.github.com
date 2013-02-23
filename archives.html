@@ -10,7 +10,7 @@ title: Matthew Cobbs &raquo; Archives
 <!-- start section -->
 <section id="blogposts">
 
-{% for post in paginator.posts %}
+{% for post in site.posts %}
 
     <h4><a href="{{ post.url }}"
         {% if post.teaser %}
@@ -19,22 +19,6 @@ title: Matthew Cobbs &raquo; Archives
         >{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></h4>
 
 {% endfor %}
-
-    <div class="pagination">
-    {% if paginator.previous_page %}
-        <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
-    {% else %}
-        <span class="previous">Previous</span>
-    {% endif %}
-
-        <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
-
-    {% if paginator.next_page %}
-        <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-    {% else %}
-        <span class="next ">Next</span>
-    {% endif %}
-    </div>
 
 </section>
 <!-- end section -->

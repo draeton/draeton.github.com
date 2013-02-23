@@ -1,4 +1,3 @@
-include: [archives,search,highlights]
 markdown: rdiscount
 paginate: 6
 pygments: true
