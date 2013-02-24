@@ -1,7 +1,7 @@
 ---
 layout: post
-title: $.getUrlVars (jQuery)
-teaser: $.getUrlVars differs from other implementations by interpreting both the search and hash as members of the same object.
+title: jQuery.getUrlVars
+teaser: jQuery.getUrlVars differs from other implementations by interpreting both the search and hash as members of the same object.
 categories:
   - jquery
   - javascript
@@ -11,7 +11,7 @@ categories:
 This is my take on an often necessary task, especially since the
 advent of so-called Web 2.0, AJAX, and now the HTML5 History API.
 
-`$.getUrlVars` differs from other implementations by interpreting
+`jQuery.getUrlVars` differs from other implementations by interpreting
 both the `search` and `hash` as members of the same object. If a key
 is found in multiple places, the value is appended to an array
 in the returned object.
