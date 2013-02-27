@@ -7,7 +7,7 @@ function($, util, stitches, templates, FileManager, DropBox, Sprite, Canvas, Too
         layout: "compact",
         prefix: "sprite",
         padding: 10,
-        uri: true
+        uri: false
     };
 
     var Stitches = function (element, options) {
