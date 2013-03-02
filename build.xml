@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="draeton.github.com" basedir="." default="commit">
-    
+
+
     <macrodef name="git">
         <attribute name="command"/>
         <attribute name="failonerror" default="true"/>
@@ -14,10 +15,11 @@
             </exec>
         </sequential>
     </macrodef>
-    
+
+
     <target name="commit" description="Commit new build to master git repo">
         <input message="Please enter a commit message:" addproperty="commit.message"/>
-        
+
         <git command="add">
             <args><arg line="."/></args>
         </git>
@@ -31,5 +33,6 @@
             </args>
         </git>
     </target>
-    
+
+
 </project>
