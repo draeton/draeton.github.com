@@ -10,5 +10,5 @@ title: Happy Birthday Mom!
 
     <iframe width="640" height="360" src="http://www.youtube.com/embed/lOWFYLXBYZk?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
-    <p><button class="btn btn-link"><i class="icon-arrow-up">not my mom</button></p>
+    <p><button class="btn btn-link"><i class="icon-arrow-up">not my mom</i></button></p>
 </div>
