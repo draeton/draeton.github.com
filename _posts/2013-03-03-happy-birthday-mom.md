@@ -10,4 +10,4 @@ title: Happy Birthday!
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/lOWFYLXBYZk?feature=player_detailpage" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
 
-<p><button class="btn btn-link"><i class="icon-arrow-up"></i> not my mom</button></p>
+<p><span class="label label-info">^ not my mom</span></p>
