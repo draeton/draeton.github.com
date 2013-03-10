@@ -23,6 +23,8 @@
 
         bindHandlers: function () {
             var $search = $(".navbar form");
+            var $freelanceForm = $("#freelance form");
+            var $freelanceSend = $("#freelanceSend");
 
             // search form
             $search.on("click", "a.add-on", function () {
@@ -33,6 +35,11 @@
             if ($.fn.tooltip) {
                 $('[data-toggle="tooltip"]').tooltip();
             }
+
+            // freelance
+            $freelanceSend.on("click", function () {
+                $freelanceForm.submit();
+            });
         },
 
         initMenu: function () {
