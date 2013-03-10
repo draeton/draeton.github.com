@@ -54,7 +54,7 @@
             });
 
             $freelanceForm.on("input,textarea", "change", function () {
-                var isValid = self.validate(this);
+                var isValid = self.validate.call(this);
             });
         },
 
@@ -77,8 +77,8 @@
             return isValid;
         },
 
-        validate: function (input) {
-            var $input = $(input);
+        validate: function () {
+            var $input = $(this);
             var $group = $input.parents(".control-group");
             var isRequired = $input.is(":required");
             var isBlank = $input.val() === "";
