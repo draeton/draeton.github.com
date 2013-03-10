@@ -22,6 +22,7 @@
         },
 
         bindHandlers: function () {
+            var self = this;
             var $search = $(".navbar form");
             var $freelanceModal = $("#freelance");
             var $freelanceForm = $("#freelance form");
@@ -43,28 +44,17 @@
             });
 
             $freelanceForm.on("submit", function () {
-                var $inputs = $freelanceForm.find(":input");
-                var $errors = $inputs.filter(function (input) {
-                    var $input = $(this);
-                    var $group = $input.parents(".control-group");
-                    var isRequired = $input.is(":required");
-                    var isBlank = $input.val() === "";
-                    var isValid = true;
-
-                    if (isRequired && isBlank) {
-                        isValid = false;
-                    }
-
-                    $group.toggleClass("error", !isValid);
-                    return !isValid;
-                });
-                var isValid = $errors.length === 0;
+                var isValid = self.validateForm(this);
 
                 if (isValid) {
                     $freelanceModal.modal("hide");
                 }
 
                 return isValid;
+            });
+
+            $freelanceForm.on("input", "change", fucntion () {
+                var isValid = self.validate(this);
             });
         },
 
@@ -76,6 +66,29 @@
                     $(this).parents("li").addClass("active");
                 }
             });
+        },
+
+        validateForm: function (form) {
+            var $form = $(form);
+            var $inputs = $form.find(":input");
+            var $errors = $inputs.filter(validate);
+            var isValid = $errors.length === 0;
+
+            return isValid;
+        },
+
+        validate: function (input) {
+            var $input = $(input);
+            var $group = $input.parents(".control-group");
+            var isRequired = $input.is(":required");
+            var isBlank = $input.val() === "";
+            var isValid = true;
+
+            if (isRequired && isBlank) {
+                isValid = false;
+            }
+
+            return isValid;
         }
     };
 
