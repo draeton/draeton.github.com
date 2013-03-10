@@ -53,7 +53,7 @@
                 return isValid;
             });
 
-            $freelanceForm.on("input", "change", function () {
+            $freelanceForm.on("input,textarea", "change", function () {
                 var isValid = self.validate(this);
             });
         },
