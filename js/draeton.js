@@ -71,7 +71,7 @@
         validateForm: function (form) {
             var $form = $(form);
             var $inputs = $form.find(":input");
-            var $errors = $inputs.filter(validate);
+            var $errors = $inputs.filter(this.validate);
             var isValid = $errors.length === 0;
 
             return isValid;
