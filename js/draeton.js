@@ -40,6 +40,26 @@
             $freelanceSend.on("click", function () {
                 $freelanceForm.submit();
             });
+
+            $freelanceForm.on("submit", function () {
+                var $inputs = $freelanceForm.find(":input");
+                var $errors = $inputs.filter(function (input) {
+                    var $input = $(this);
+                    var $group = $input.parents(".control-group");
+                    var isRequired = $input.is(":required");
+                    var isBlank = $input.val() === "";
+                    var isValid = true;
+
+                    if (isRequired && isBlank) {
+                        isValid = false;
+                    }
+
+                    $group.toggleClass("error", !isValid);
+                    return !isValid;
+                });
+
+                return $errors.length > 0;
+            }
         },
 
         initMenu: function () {
