@@ -23,6 +23,7 @@
 
         bindHandlers: function () {
             var $search = $(".navbar form");
+            var $freelanceModal = $("#freelance");
             var $freelanceForm = $("#freelance form");
             var $freelanceSend = $("#freelanceSend");
 
@@ -57,8 +58,13 @@
                     $group.toggleClass("error", !isValid);
                     return !isValid;
                 });
+                var isValid = $errors.length === 0;
 
-                return $errors.length > 0;
+                if (isValid) {
+                    $freelanceModal.modal("hide");
+                }
+
+                return isValid;
             });
         },
 
