@@ -59,7 +59,7 @@
                 });
 
                 return $errors.length > 0;
-            }
+            });
         },
 
         initMenu: function () {
