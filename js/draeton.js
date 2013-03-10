@@ -88,6 +88,8 @@
                 isValid = false;
             }
 
+            $group.toggleClass("error", isValid);
+
             return isValid;
         }
     };
