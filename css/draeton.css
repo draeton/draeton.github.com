@@ -119,41 +119,48 @@ pre code {
     display: inline-block;
 }
 
-.contacts-github {
+.contact-behance {
     width: 30px;
     height: 30px;
-    background-position: -82px -41px;
+    background-position: -5px -5px;
 }
 
-.contacts-gmail {
+.contact-github {
     width: 30px;
     height: 30px;
-    background-position: -82px -0px;
+    background-position: -45px -5px;
 }
 
-.contacts-linkedin {
+.contact-gmail {
     width: 30px;
     height: 30px;
-    background-position: -41px -41px;
+    background-position: -5px -45px;
 }
 
-.contacts-stackoverflow {
+.contact-linkedin {
     width: 30px;
     height: 30px;
-    background-position: -0px -41px;
+    background-position: -45px -45px;
 }
 
-.contacts-tumblr {
+.contact-stackoverflow {
     width: 30px;
     height: 30px;
-    background-position: -41px -0px;
+    background-position: -85px -5px;
 }
 
-.contacts-twitter {
+.contact-tumblr {
     width: 30px;
     height: 30px;
-    background-position: -0px -0px;
+    background-position: -85px -45px;
 }
+
+.contact-twitter {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -85px;
+}
+
 
 /* Facebook comments (fluid?) */
 
