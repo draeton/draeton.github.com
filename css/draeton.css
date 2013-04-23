@@ -119,43 +119,43 @@ pre code {
     display: inline-block;
 }
 
-.contact-behance {
+.contacts-behance {
     width: 30px;
     height: 30px;
     background-position: -5px -5px;
 }
 
-.contact-github {
+.contacts-github {
     width: 30px;
     height: 30px;
     background-position: -45px -5px;
 }
 
-.contact-gmail {
+.contacts-gmail {
     width: 30px;
     height: 30px;
     background-position: -5px -45px;
 }
 
-.contact-linkedin {
+.contacts-linkedin {
     width: 30px;
     height: 30px;
     background-position: -45px -45px;
 }
 
-.contact-stackoverflow {
+.contacts-stackoverflow {
     width: 30px;
     height: 30px;
     background-position: -85px -5px;
 }
 
-.contact-tumblr {
+.contacts-tumblr {
     width: 30px;
     height: 30px;
     background-position: -85px -45px;
 }
 
-.contact-twitter {
+.contacts-twitter {
     width: 30px;
     height: 30px;
     background-position: -5px -85px;
